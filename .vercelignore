@@ -1,0 +1,37 @@
+# ============================================================
+#  .vercelignore — what does NOT get uploaded to Vercel
+#  ------------------------------------------------------------
+#  Vercel uploads whatever is in the project root unless told
+#  otherwise. Two things in this folder must never leave your
+#  machine: the bot credentials and the backend source.
+# ============================================================
+
+# ---- 1. The Discord backend (secrets + 200MB of node_modules) ----
+#  discord-bot/.env holds DISCORD_BOT_TOKEN, DISCORD_WEBHOOK_URL,
+#  ORDER_API_KEY, GUILD_ID ... Uploading this publishes your bot token.
+discord-bot/
+
+# ---- 2. Apache config ----
+#  Vercel ignores it as config, so it would be served as PLAIN TEXT at
+#  /.htaccess and hand your security posture to anyone who asks for it.
+.htaccess
+
+# ---- 3. Secrets & VCS / editor noise (defence in depth) ----
+.env
+.env.*
+!.env.example
+node_modules/
+.git/
+.gitignore
+.vercel/
+.vscode/
+.idea/
+
+# ---- 4. Logs, maps, backups ----
+*.log
+*.js.map
+*.css.map
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db

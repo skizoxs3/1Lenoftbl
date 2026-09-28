@@ -1,0 +1,9 @@
+{
+  "name": "leno-portfolio-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Leno Official Portfolio & Services - Static Website",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
